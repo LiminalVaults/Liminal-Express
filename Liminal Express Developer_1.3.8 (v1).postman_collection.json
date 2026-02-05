@@ -1,0 +1,4285 @@
+{
+	"info": {
+		"_postman_id": "b66bf6be-0359-4e21-aac7-5db8daee7835",
+		"name": "Liminal Express Developer_1.3.8 (v1)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49077746"
+	},
+	"item": [
+		{
+			"name": "Wallets",
+			"item": [
+				{
+					"name": "Create Hot Wallet",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client_id}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic VFQ0cEFuMkMyVmZWVmR0S2dWc2VUR08wOGE5NEZqaWI6cnVTRWJzZlhGX0ttTFgteEtnOC1OTTMyZm9yNDBYazZHcUFqRmhrbDJqMkZ0UDJKUHFUc0IzendNWlVHZldCVg==",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wallet\":{\n        \"coin\":\"eth\",\n        \"walletType\":\"withdrawal\",\n        \"walletVersion\": 1\n    }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/onboarding/create-wallet",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"onboarding",
+								"create-wallet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve List of Wallets",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client_id}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/wallet/get-list-wallet",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"get-list-wallet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Wallet Data",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client_id}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/wallet/get-wallet",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"get-wallet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Wallet Balance",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client_id}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/wallet/balance",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"balance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Token Balance",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client_id}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":22181,\n        \"allToken\":true,\n        \"tokenOptions\":{\n                \"tokenName\":\"bat\",\n                \"tokenAddress\":\"0xe9928a4CBacC94368DDd8cDA3003e3213D477052\"\n            }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/wallet/balance",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"balance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a watch-only wallet",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client_id}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"wallet\": {\n    \"coin\": \"eth\",\n    \"type\": \"static\",\n    \"mainWalletAddress\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n    \"walletName\": \"Test watch only wallet\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/wallet/create-watch-only-wallet",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"create-watch-only-wallet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":22181,\n        \"allToken\":true,\n        \"tokenOptions\":{\n                \"tokenName\":\"bat\",\n                \"tokenAddress\":\"0xe9928a4CBacC94368DDd8cDA3003e3213D477052\"\n            }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/wallet/create-watch-only-wallet",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"wallet",
+										"create-watch-only-wallet"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": true,\n  \"data\": {\n    \"type\": \"watchonly\",\n    \"subtype\": \"static\",\n    \"name\": \"Test watch only wallet\",\n    \"status\": 1,\n    \"balance\": 0,\n    \"issynced\": true,\n    \"chain\": \"ETH\",\n    \"coin\": \"ETH\",\n    \"parentchain\": \"EVM\",\n    \"orgid\": 1903,\n    \"id\": 51852,\n    \"walletidentifier\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n    \"walletpath\": \"\"\n  }\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":22181,\n        \"allToken\":true,\n        \"tokenOptions\":{\n                \"tokenName\":\"bat\",\n                \"tokenAddress\":\"0xe9928a4CBacC94368DDd8cDA3003e3213D477052\"\n            }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/wallet/create-watch-only-wallet",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"wallet",
+										"create-watch-only-wallet"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"Address 0x91350e2eCE91c8E8c5880093873EAa6Be473B64f already exists for chain ETH\",\n  \"code\": \"custom\",\n  \"info\": {}\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":22181,\n        \"allToken\":true,\n        \"tokenOptions\":{\n                \"tokenName\":\"bat\",\n                \"tokenAddress\":\"0xe9928a4CBacC94368DDd8cDA3003e3213D477052\"\n            }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/wallet/create-watch-only-wallet",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"wallet",
+										"create-watch-only-wallet"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"UNAUTHORIZED\",\n  \"code\": \"Access_Denied\",\n  \"info\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Import addresses into a Watch-Only Wallet",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client_id}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"walletId\": 51852,\n  \"addressList\": [\n    \"0x83b8716E057d669B8055D7618C22477D6c568DFf\",\n    \"0x273A6f75305feb716206F23b4DAeF7bF4Dd63691\",\n    \"0xACdc13A28B99Eba65C204165fCe5E9ed54423507\",\n    \"0x7a940a72fEA0DD1d59A2565cE7007ed076CffD10\",\n    \"0x6c645172945ce78C9010840061d87Dbe6D58C581\",\n    \"0xba80654B3eAdafAD962511a2CeC5405F981BdA13\",\n    \"0xE2606C436A0F02202c0e20eA114fcefdEfb31ADC\",\n    \"0x3c685a06F4Ea81C58f698a1D5fAF3E4f748aEc4B\",\n    \"0x26ca3b3279e7a918bC82E9f648ACC5816Deb33BD\",\n    \"0x46135e7073e01dd427971dCb7C806A8194306be7\",\n    \"0x9D8ac2604BE4e4ac8bE23B75Fb80C3515bA73056\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/wallet/import-addresses",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"import-addresses"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":22181,\n        \"allToken\":true,\n        \"tokenOptions\":{\n                \"tokenName\":\"bat\",\n                \"tokenAddress\":\"0xe9928a4CBacC94368DDd8cDA3003e3213D477052\"\n            }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/wallet/import-addresses",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"wallet",
+										"import-addresses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": true,\n  \"data\": {\n    \"addressesImported\": 11,\n    \"addressesSkipped\": 0,\n    \"skippedAddressList\": []\n  },\n  \"message\": \"\"\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":22181,\n        \"allToken\":true,\n        \"tokenOptions\":{\n                \"tokenName\":\"bat\",\n                \"tokenAddress\":\"0xe9928a4CBacC94368DDd8cDA3003e3213D477052\"\n            }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/wallet/import-addresses",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"wallet",
+										"import-addresses"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"All addresses already exist in the wallet: 0x26ca3b3279e7a918bC82E9f648ACC5816Deb33BD, 0x273A6f75305feb716206F23b4DAeF7bF4Dd63691, 0x3c685a06F4Ea81C58f698a1D5fAF3E4f748aEc4B, 0x46135e7073e01dd427971dCb7C806A8194306be7, 0x6c645172945ce78C9010840061d87Dbe6D58C581, 0x7a940a72fEA0DD1d59A2565cE7007ed076CffD10, 0x83b8716E057d669B8055D7618C22477D6c568DFf, 0x9D8ac2604BE4e4ac8bE23B75Fb80C3515bA73056, 0xACdc13A28B99Eba65C204165fCe5E9ed54423507, 0xba80654B3eAdafAD962511a2CeC5405F981BdA13, 0xE2606C436A0F02202c0e20eA114fcefdEfb31ADC\\n\",\n  \"code\": \"custom\",\n  \"info\": {}\n}"
+						}
+					]
+				}
+			],
+			"description": "A blockchain wallet is a digital wallet used to store and manage cryptocurrencies and private keys. It allows you to send, receive, and securely store digital assets. Liminal provides APIs to create and manage hot (online) wallets. Hot wallets can be of two types—deposit or withdrawal. Deposit wallets are used to collect funds from your customers. Withdrawal wallets are used to process funds out of the Liminal wallet infrastructure. Liminal provides the following APIs to create and manage hot wallets:\n\n- [Create Hot Wallet](https://docs.lmnl.app/reference/createahotwallet)\n    \n- [Retrieve List of Wallets](https://docs.lmnl.app/reference/getlistofwallet)\n    \n- [Retrieve Wallet Data](https://docs.lmnl.app/reference/getwalletdata)\n    \n- [Retrieve Wallet Balance](https://docs.lmnl.app/reference/getwalletbalance)\n    \n- [Retrieve Token Balance](https://docs.lmnl.app/reference/getwalletbalance)"
+		},
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "Generate Address",
+					"item": [
+						{
+							"name": "Retrieve Single Address",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{client_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{client_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true\n    },\n    \"path\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/wallet/generate-address",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"wallet",
+										"generate-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve List Address",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{client_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{client_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true\n    },\n    \"path\":{\n        \"startIndex\":0,\n        \"endIndex\":10\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/wallet/generate-many-address",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"wallet",
+										"generate-many-address"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Balance",
+					"item": [
+						{
+							"name": "NativeCoin",
+							"item": [
+								{
+									"name": "Retrieve Address Balance",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":22179\n    },\n    \"getAddressBalanceOption\":{\n        \"address\":\"0x401D3e7d28cAc478d113cAc1bb3307B77b6DDE6A\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/address-balance",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"address-balance"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Retrieve List Address Token Balance",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"getAddressBalanceOption\":{\n       \"pagination\":{\n                    \"pageNumber\":1,\n                    \"pageSize\":50\n                }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/address-balance",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"address-balance"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Token",
+							"item": [
+								{
+									"name": "Retrieve Address Token Balance",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												},
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"getAddressBalanceOption\":{\n        \"address\":\"0x4014c023192ef37a91adcea4ac2fdd90914bd76f\",\n        \"isTokenBalance\":true\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/address-balance",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"address-balance"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Retrieve List Address Token Balance",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    }, \n    \"getAddressBalanceOption\":{\n        \"pagination\":{\n                    \"pageNumber\":1,\n                    \"pageSize\":10\n                },\n        \"isTokenBalance\":true\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/address-balance",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"address-balance"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Verify Addresses",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic UjV2M3dwb2tqRjZaVFUxemNtOTJTaWM1Vm50SzBCQkk6bWxIMzBvRXJlWXlnRld1MVAxcjhJdmE1QUlhVFpfU2Nfek9PZUZtcFNJZWpJY0hVY3VSUmJFUENJTHpLdmxwbg=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"addresses\": [\n        \"0xA9DBfaD02d5187d54C5A56E2b8919F40B02b155E\",\n        \"rfz8tD5zFsaGbWcG9nW3iWTiTDzTKRA56w\",\n        \"2NG4faLBTWT1bPDgiA7m49w6AH3atWsJujt\",\n        \"2NAoK7PzA6ShAyzdgyRxBYAVhpwLuyWHqxU\",\n        \"addr_test1vq00pj9ddyy05elg7m7ypquru345ftz3wgs0x2z0zs2u6ccw9raah\",\n        \"addr_test1vzkhkvccgknph7kf6y2s680rufwj3dhrzf7jul0mfmfzzvcd7fueh\",\n        \"cosmos10s32ymhm7kvw8g9vf8js2hxsnakr203f02l4tw\",\n        \"cosmos14s86tzdtugxv90fazcrjgyp96sewa0nxvph37q\",\n        \"D9hAjzCRodQqHVpDLCDNcQKJgpFxayQ9aD\",\n        \"DSBhdcjVLsZzHSPseFAgvJ78abHpaHqKuK\",\n        \"0xf8A7CB2fb72f0f913D1fF04E7f1C73DBbD7699B0\",\n        \"0xe4dd5105cFadeBba0BaD6d85dE4cAfA88bdCe1f5\",\n        \"MSVZC7YC8N3WLfSUntmSq8RD77D2YwkpBG\",\n        \"5e94dfef025edf0c82e3c4d87e7a07551abcbd9d8b1af4d27ca26bc0cf33a21a\",\n        \"c20a7ad8472dabb50ab7c5e832903199d450818b9854f58d2332fe6225b353fb\",\n        \"0x44A8588Aad97cbcF929681bd40A7a9Aa9e9B30C0\",\n        \"0x791F286a4246C9eF9Bfe7E2E15Dae51A91F37B17\",\n        \"nUkqsBmufQJSxV2HTVmjvx3NJoQvpTNZt677Br5gvuK\",\n        \"bTS2AnBoX37ZNod6eC9frBhM7p2mPK81H9MDfxp6CzD\",\n        \"TWMt6cjEKvwzqZbDmdRVMg8voMLC25v8wh\",\n        \"TF1M8r6wj3pra42LL31Pj3JUu9ChtNoguZ\",\n        \"xdc4eBf4b24637f4241231d5D9c725f69f72D9f67AB\",\n        \"xdc0bCA6349D5F7e8FBCfE30c0Ef75B8B9686ddaA70\",\n        \"GDU32FX6JVBOV57K6QVJPAMZVIWNB2VI6RYZ2WKG4MXCFRW2OR34ZVUD\",\n        \"GBCIRRC2RFPHHDBXCQEDC57QVQSCDXJ3HP4GU6O56IJF3F3IRA7GEMPD\",\n        \n        \"7PVWCYM5COQR5UJI727Q5CTOZUX2CIHSJDC4HLEWC34BEGRXARTNMGEK7M\",\n        \"4ZZGOH46IDCSB4HKXIYQHVJEZ3LIXOXQ2SZ6XFSPAJTAT5WPRL3ADPW6XU\",\n        \"0xFfB89BBC1bE88C23676769f3B4991d3Fa2742d44\",\n        \"0x62c6DDd061A1A75A45aDE42C26fA01f4be3DE76A\",\n        \"0x3f48b6038b3405e7EdfC26fe564716c0562e879E\",\n        \"0xE3f07B78408FdbDAFC0C0EcD105b4365E2eaD681\",\n        \"0xE3f07B78408FdbDAFC0C0EcD105b4365E2eaD681\"\n        \n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/wallets/22449/verify-addresses",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"wallets",
+								"22449",
+								"verify-addresses"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "In blockchain, an address is a unique identifier used to represent an account on the network. It serves as a destination for sending and receiving native coins or tokens. A deposit hot wallet contains a list of addresses, each assigned to a customer. These addresses are used to collect funds from your customers. You can generate thousands of addresses for your customers to deposit funds. Use the following APIs to create and manage your addresses:\n\n- [Retrieve Single Address](https://docs.lmnl.app/reference/generatesingleaddress)\n    \n- [Retrieve List Address](https://docs.lmnl.app/reference/generatemanyaddress)\n    \n- [Retrieve Address balance](https://docs.lmnl.app/reference/getaddressbalance)\n    \n- [Retrieve List Address Balance](https://docs.lmnl.app/reference/getaddressbalance)\n    \n- [Verify addresses](https://docs.lmnl.app/reference/verifyaddresses)"
+		},
+		{
+			"name": "Transfers",
+			"item": [
+				{
+					"name": "Withdrawal Wallets",
+					"item": [
+						{
+							"name": "Transactions",
+							"item": [
+								{
+									"name": "Create Native Coin Transaction",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"",
+													"// Code to generate unique Seq id everytime",
+													"function generateSeqId() {",
+													"  const hexDigits = '0123456789abcdef';",
+													"  let seqId = '';",
+													"  for (let i = 0; i < 36; i++) {",
+													"    if (i === 8 || i === 13 || i === 18 || i === 23) {",
+													"      seqId += '-';",
+													"    } else if (i === 14) {",
+													"      seqId += '4';",
+													"    } else if (i === 19) {",
+													"      seqId += hexDigits.substr((Math.random() * 4) | 0, 1);",
+													"    } else {",
+													"      seqId += hexDigits.substr((Math.random() * 16) | 0, 1);",
+													"    }",
+													"  }",
+													"  return seqId;",
+													"}",
+													"",
+													"",
+													"const $guid = ''",
+													"pm.variables.set(\"$guid\", generateSeqId())",
+													"",
+													"",
+													"//Coin names and wallet id's",
+													"const trx = ''",
+													"pm.variables.set(\"trx\",13298)",
+													"",
+													"// pm.collectionVariables.set(\"$guid\", generateSeqId())"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\": {\n        \"coin\": \"trx\",\n        \"walletId\": 5813,\n        \"allToken\": true\n    },\n    \"transactions\": {\n        \"recipientsData\": {\n            \"recipients\": [\n                {\n                    \"address\": \"TSvWJSmdq3U8DGYxsfCZdA2hegMfBiw7qS\",\n                    \"amount\": 50.0\n                }\n            ],\n            \"sequenceId\": \"{{$guid}}\"\n        }\n    }\n}\n\n\n\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/send-many-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"send-many-transaction"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Token Transaction",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":22181,\n        \"allToken\":true,\n            \"tokenOptions\":{\n                \"tokenName\":\"BAT\",\n                \"tokenAddress\":\"0xe9928a4CBacC94368DDd8cDA3003e3213D477052\"\n            }\n    },\n    \"transactions\":{\n        \"recipientsData\":{\n                \"recipients\":[\n                    {\n                        \"address\":\"0x0260D18287f9C4724B165A16F670c180ed77D955\",\n                        \"amount\":10\n                    }\n                ],\n                \"sequenceId\":\"{{$guid}}\"\n        }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/send-many-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"send-many-transaction"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Resend EVM-based Transaction",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\": 1\n    },\n    \"walletIdList\":[1]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/resend-evm-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"resend-evm-transaction"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Resend Bitcoin Transaction",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											},
+											{
+												"key": "content-type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic e3ttZ210X2NsaWVudF9pZH19Ont7bWdtdF9jbGllbnRfc2VjcmV0fX0="
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"btc\",\n        \"walletId\": 1\n    },\n    \"sequenceId\": \"967ecd1c-fc5c-4f1d-0421-8740cd2e93b5\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/resend-single-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"resend-single-transaction"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Memo Transaction",
+							"item": [
+								{
+									"name": "Create Transaction - XRP/COSMOS/XLM",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\": {\n        \"coin\": \"xrp\",\n        \"walletId\": 17889\n    },\n    \"transactions\": {\n        \"recipientsData\": {\n            \"recipients\": [\n                {\n                    \"address\": \"rJAQaRf9rUzMb1mkfu5DZ74Sk8WLs7tJCk\",\n                    \"amount\": 50,\n                    \"data\": \"02042024\" // Memo Or Destination Tag\n                }\n            ],\n            \"sequenceId\": \"{{guid}}\"\n        }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/send-many-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"send-many-transaction"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Deposit Wallets",
+					"item": [
+						{
+							"name": "UTXO",
+							"item": [
+								{
+									"name": "Consolidate Native UTXO Coin From Multiple Address",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"btc\",\n        \"walletId\":17878\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"2N34PuWCEGE68C57qYaqndGxCPLwpvUu6dJ\",\n                \"isInternal\":true\n            },\n        \"sequenceId\":\"{{$guid}}\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"consolidate-transaction"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "429 Rate Limit Exceeded",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"btc\",\n        \"walletId\":17878\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"2N34PuWCEGE68C57qYaqndGxCPLwpvUu6dJ\",\n                \"isInternal\":true\n            },\n        \"sequenceId\":\"{{$guid}}\"\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"wallet",
+														"consolidate-transaction"
+													]
+												}
+											},
+											"status": "Rate Limit Exceeded",
+											"code": 429,
+											"_postman_previewlanguage": "",
+											"header": [],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
+											"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"Another consolidation session related to this wallet is in progress. Please try again in 15 seconds\",\n  \"code\": \"RATE_LIMIT_EXCEEDED\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Consolidate Native UTXO From Single Address",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"btc\",\n        \"walletId\":2\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"MVXHL4BFiE1BFc98eDoL1wTSXtfcdcSLqj\",\n                \"fromAddress\":\"ZXXHL5BFiE1BFc98eDoL2aTSXtfcdcSL59\"\n            }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"consolidate-transaction"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "429 Rate Limit Exceeded",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"btc\",\n        \"walletId\":2\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"MVXHL4BFiE1BFc98eDoL1wTSXtfcdcSLqj\",\n                \"fromAddress\":\"ZXXHL5BFiE1BFc98eDoL2aTSXtfcdcSL59\"\n            }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"wallet",
+														"consolidate-transaction"
+													]
+												}
+											},
+											"status": "Rate Limit Exceeded",
+											"code": 429,
+											"_postman_previewlanguage": "",
+											"header": [],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
+											"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"Another consolidation session related to this wallet is in progress. Please try again in 15 seconds\",\n  \"code\": \"RATE_LIMIT_EXCEEDED\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "NON-UTXO",
+							"item": [
+								{
+									"name": "Consolidate Native Non-UTXO Coin From Multiple Address",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":17868,\n        \"allTokens\":true\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0x5f05eDc8993aa0e2468E076DBE104B90236ec888\"\n            }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"consolidate-transaction"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "400 Nothing to Consolidate",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":17868,\n        \"allTokens\":true\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0x5f05eDc8993aa0e2468E076DBE104B90236ec888\"\n            }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"wallet",
+														"consolidate-transaction"
+													]
+												}
+											},
+											"status": "Nothing to Consolidate",
+											"code": 400,
+											"_postman_previewlanguage": "",
+											"header": [],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
+											"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"Insufficient balance. \",\n  \"code\": \"NOTHING_TO_CONSOLIDATE\"\n}"
+										},
+										{
+											"name": "429 Rate Limit Exceeded",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":17868,\n        \"allTokens\":true\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0x5f05eDc8993aa0e2468E076DBE104B90236ec888\"\n            }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"wallet",
+														"consolidate-transaction"
+													]
+												}
+											},
+											"status": "Rate Limit Exceeded",
+											"code": 429,
+											"_postman_previewlanguage": "",
+											"header": [],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
+											"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"Another consolidation session related to this wallet is in progress. Please try again in 15 seconds\",\n  \"code\": \"RATE_LIMIT_EXCEEDED\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Consolidate Native Non-UTXO Token From Multiple Address",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":17868,\n        \"allToken\":true,\n        \"tokenOptions\":{\n                \"tokenName\":\"DAI\",\n                \"tokenAddress\":\"0x407bd2FC25F6b8cf913b551E5B1cBd3B49D2282F\"\n            }\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0x5f05eDc8993aa0e2468E076DBE104B90236ec888\"\n            }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"consolidate-transaction"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "429 Rate Limit Exceeded",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":17868,\n        \"allToken\":true,\n        \"tokenOptions\":{\n                \"tokenName\":\"DAI\",\n                \"tokenAddress\":\"0x407bd2FC25F6b8cf913b551E5B1cBd3B49D2282F\"\n            }\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0x5f05eDc8993aa0e2468E076DBE104B90236ec888\"\n            }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"wallet",
+														"consolidate-transaction"
+													]
+												}
+											},
+											"status": "Rate Limit Exceeded",
+											"code": 429,
+											"_postman_previewlanguage": "",
+											"header": [],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
+											"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"Another consolidation session related to this wallet is in progress. Please try again in 15 seconds\",\n  \"code\": \"RATE_LIMIT_EXCEEDED\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Consolidate Native Non-UTXO Coin From Single Address",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0xb86f1bb681cbb267fa105b38601dc8f67487edd5\",\n                \"fromAddress\":\"0x8C3958cdb467bE0D0581d2A5D5387A78D598FaA0\"\n            }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"consolidate-transaction"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "429 Rate Limit Exceeded",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0xb86f1bb681cbb267fa105b38601dc8f67487edd5\",\n                \"fromAddress\":\"0x8C3958cdb467bE0D0581d2A5D5387A78D598FaA0\"\n            }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"wallet",
+														"consolidate-transaction"
+													]
+												}
+											},
+											"status": "Rate Limit Exceeded",
+											"code": 429,
+											"_postman_previewlanguage": "",
+											"header": [],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
+											"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"Another consolidation session related to this wallet is in progress. Please try again in 15 seconds\",\n  \"code\": \"RATE_LIMIT_EXCEEDED\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Consolidate Native Non-UTXO Token From Single Address",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true,\n            \"tokenOptions\":{\n                \"tokenName\":\"USDC\",\n                \"tokenAddress\":\"0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C\"\n            }\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0xb86f1bb681cbb267fa105b38601dc8f67487edd5\",\n                \"fromAddress\":\"0x8C3958cdb467bE0D0581d2A5D5387A78D598FaA0\"\n            }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"consolidate-transaction"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "429 Rate Limit Exceeded",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true,\n            \"tokenOptions\":{\n                \"tokenName\":\"USDC\",\n                \"tokenAddress\":\"0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C\"\n            }\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0xb86f1bb681cbb267fa105b38601dc8f67487edd5\",\n                \"fromAddress\":\"0x8C3958cdb467bE0D0581d2A5D5387A78D598FaA0\"\n            }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"wallet",
+														"consolidate-transaction"
+													]
+												}
+											},
+											"status": "Rate Limit Exceeded",
+											"code": 429,
+											"_postman_previewlanguage": "",
+											"header": [],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
+											"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"Another consolidation session related to this wallet is in progress. Please try again in 15 seconds\",\n  \"code\": \"RATE_LIMIT_EXCEEDED\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Cold Wallets",
+					"item": [
+						{
+							"name": "Push Refill Transaction",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{client_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{client_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/wallet/push-refill-transaction",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"wallet",
+										"push-refill-transaction"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Native Asset Transaction",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{client_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{client_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":3,\n        \"allToken\":true\n    },\n    \"transactions\":{\n        \"recipientsData\":{\n                \"recipients\":[\n                    {\n                        \"address\":\"0xa5946470206572eC729DA064fDe6a044CCfbE537\",\n                        \"amount\":0.008\n                    }\n                ],\n                \"sequenceId\":\"{{guid}}\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/wallet/send-many-transaction",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"wallet",
+										"send-many-transaction"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Token Transaction",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{client_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{client_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wallet\": {\n        \"coin\": \"eth\",\n        \"walletId\": 3,\n        \"allToken\": true,\n        \"tokenOptions\": {\n            \"tokenName\": \"USDC\",\n            \"tokenAddress\": \"0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C\"\n        }\n    },\n    \"transactions\": {\n        \"recipientsData\": {\n            \"recipients\": [\n                {\n                    \"address\": \"0x8C3958cdb467bE0D0581d2A5D5387A78D598svfbf\",\n                    \"amount\": 10\n                }\n            ],\n            \"sequenceId\": \"{{$guid}}\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/wallet/send-many-transaction",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"wallet",
+										"send-many-transaction"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Transfers",
+					"item": [
+						{
+							"name": "Get Transfer by Sequence Id",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{client_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{client_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"sequenceId\":\"93544241-c00e-c754-3bd0-494567a67ee8\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/wallet/get-transfer",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"wallet",
+										"get-transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Transfer by TransactionId",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{client_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{client_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"txId\":\"0x992ea09580d5c3c18cde5092dc96c9564c4945b42dafc1eba3f67b72b99f2efb\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/wallet/get-transfer",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"wallet",
+										"get-transfer"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Pending Transactions",
+					"item": [
+						{
+							"name": "Get Pending Transaction By Sequence ID",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{client_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{client_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"getPendingTransactionOptions\":{\n        \"sequenceId\":\"dbb1a39d-5261-4d82-84ae-a4e62488bb60\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/wallet/pending-transaction",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"wallet",
+										"pending-transaction"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Pending Transaction By Pagination",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{client_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{client_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"getPendingTransactionOptions\":{\n        \"pagination\":{\n                    \"pageNumber\":1,\n                    \"pageSize\":10\n                }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/wallet/pending-transaction",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"wallet",
+										"pending-transaction"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Retrieve Transaction Status",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client_id}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"sequenceId\":\"dbb1a39d-5261-4d82-84ae-a4e62488bb60\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/wallet/transaction-status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"transaction-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve List of Transactions",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client_id}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n     \"pagination\":{\n                    \"pageNumber\":1,\n                    \"pageSize\":10\n                }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/wallet/get-transfer-list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"get-transfer-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Estimated Gas Fees and Rates",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client_id}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/wallet/get-approx-fees",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"get-approx-fees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rescan a transaction using transactionHash",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client_id}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"transactionHash\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n  \"coin\": \"ETH\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/transactions/rescan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"transactions",
+								"rescan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"transactionHash\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n  \"coin\": \"ETH\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/transactions/rescan",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"transactions",
+										"rescan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": true,\n  \"message\": \"Rescan initiated. Transaction records will be updated shortly.\"\n}"
+						},
+						{
+							"name": "400 Bad Request: UNFINALISED_TRX",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"transactionHash\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n  \"coin\": \"ETH\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/transactions/rescan",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"transactions",
+										"rescan"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": false,\n  \"message\": \"The transaction has not been finalised on-chain. Please check again in few minutes after it has received the minimum number of confirmations.\",\n  \"code\": \"UNFINALISED_TRX\"\n}"
+						},
+						{
+							"name": "400 Bad Request: TOO_MANY_REQUEST_PARAMETERS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"transactionHash\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n  \"coin\": \"ETH\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/transactions/rescan",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"transactions",
+										"rescan"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": false,\n  \"message\": \"Pass either Sequence ID or Transaction Hash and not both.\",\n  \"code\": \"TOO_MANY_REQUEST_PARAMETERS\"\n}"
+						},
+						{
+							"name": "400 Bad Request: BLOCK_HEIGHT_TOO_HIGH",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"transactionHash\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n  \"coin\": \"ETH\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/transactions/rescan",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"transactions",
+										"rescan"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": false,\n  \"message\": \"The latest block has not yet been synced. Please try again in sometime.\",\n  \"code\": \"BLOCK_HEIGHT_TOO_HIGH\"\n}"
+						},
+						{
+							"name": "400 Bad Request: RATE_LIMIT_EXCEEDED",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"transactionHash\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n  \"coin\": \"ETH\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/transactions/rescan",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"transactions",
+										"rescan"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": false,\n  \"message\": \"Rate limit exceeded. Only 1 request per minute is allowed for rescanning with the same sequence ID or transaction hash. Please try again later.\",\n  \"code\": \"RATE_LIMIT_EXCEEDED\"\n}"
+						},
+						{
+							"name": "404 Not Found: INVALID_SEQUENCE_ID",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"transactionHash\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n  \"coin\": \"ETH\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/transactions/rescan",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"transactions",
+										"rescan"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": false,\n  \"message\": \"Invalid SequenceId. No matching transaction found for this organisation. Please verify the input.\",\n  \"code\": \"INVALID_SEQUENCE_ID\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Rescan a transaction using sequenceId",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client_id}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"sequenceId\": \"1234567890abcdef\",\n  \"coin\": \"BTC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/transactions/rescan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"transactions",
+								"rescan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"transactionHash\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n  \"coin\": \"ETH\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/transactions/rescan",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"transactions",
+										"rescan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": true,\n  \"message\": \"Rescan initiated. Transaction records will be updated shortly.\"\n}"
+						},
+						{
+							"name": "400 Bad Request: UNFINALISED_TRX",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"transactionHash\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n  \"coin\": \"ETH\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/transactions/rescan",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"transactions",
+										"rescan"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": false,\n  \"message\": \"The transaction has not been finalised on-chain. Please check again in few minutes after it has received the minimum number of confirmations.\",\n  \"code\": \"UNFINALISED_TRX\"\n}"
+						},
+						{
+							"name": "400 Bad Request: TOO_MANY_REQUEST_PARAMETERS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"transactionHash\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n  \"coin\": \"ETH\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/transactions/rescan",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"transactions",
+										"rescan"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": false,\n  \"message\": \"Pass either Sequence ID or Transaction Hash and not both.\",\n  \"code\": \"TOO_MANY_REQUEST_PARAMETERS\"\n}"
+						},
+						{
+							"name": "400 Bad Request: BLOCK_HEIGHT_TOO_HIGH",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"transactionHash\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n  \"coin\": \"ETH\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/transactions/rescan",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"transactions",
+										"rescan"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": false,\n  \"message\": \"The latest block has not yet been synced. Please try again in sometime.\",\n  \"code\": \"BLOCK_HEIGHT_TOO_HIGH\"\n}"
+						},
+						{
+							"name": "400 Bad Request: RATE_LIMIT_EXCEEDED",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"transactionHash\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n  \"coin\": \"ETH\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/transactions/rescan",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"transactions",
+										"rescan"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": false,\n  \"message\": \"Rate limit exceeded. Only 1 request per minute is allowed for rescanning with the same sequence ID or transaction hash. Please try again later.\",\n  \"code\": \"RATE_LIMIT_EXCEEDED\"\n}"
+						},
+						{
+							"name": "404 Not Found: INVALID_SEQUENCE_ID",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"transactionHash\": \"0xC92745038c520446d1fb88c84Da268A22cfFDEB8\",\n  \"coin\": \"ETH\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/transactions/rescan",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"transactions",
+										"rescan"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n  \"success\": false,\n  \"message\": \"Invalid SequenceId. No matching transaction found for this organisation. Please verify the input.\",\n  \"code\": \"INVALID_SEQUENCE_ID\"\n}"
+						}
+					]
+				}
+			],
+			"description": "A transaction in blockchain is the transfer of digital assets between addresses within the network, signed using a private key. The wallet participants—initiators and signers are responsible for initiating and signing the transaction, respectively. You can create and manage your hot wallet transactions using the following APIs:\n\n- [Create Transaction](https://docs.lmnl.app/reference/sendmanytransaction)\n    \n- [Resend EVM-based transactions](https://docs.lmnl.app/reference/resendtransactionevm)\n    \n- [Resend Bitcoin transaction](https://docs.lmnl.app/reference/resendtransactionutxo)\n    \n- [Consolidate Wallet Assets](https://docs.lmnl.app/reference/consolidatewalletassets)\n    \n- [Push Refill Transaction](https://docs.lmnl.app/reference/pushrefilltransaction)\n    \n- [Retrieve Transaction](https://docs.lmnl.app/reference/gettransfers)\n    \n- [Retrieve Pending Transactions](https://docs.lmnl.app/reference/getpendingtransaction)\n    \n- [Retrieve Transaction Status](https://docs.lmnl.app/reference/gettransactionstatus)\n    \n- [Retrieve List of Transactions](https://docs.lmnl.app/reference/gettransferlist)\n    \n- [Retrieve Estimated Gas Fees and Rates](https://docs.lmnl.app/reference/getapproxfees)"
+		},
+		{
+			"name": "Transfer with Travel Rule",
+			"item": [
+				{
+					"name": "Withdrawal",
+					"item": [
+						{
+							"name": "Create Travel Rule Transactions",
+							"item": [
+								{
+									"name": "Create Transaction by native coin",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":19565\n    },\n    \"transaction\":{\n        \"recipientsData\":{\n                \"recipients\":[\n                    {\n                        \"address\":\"0x0260D18287f9C4724B165A16F670c180ed77D955\",\n                        \"amount\":0.008\n                    }\n                ],\n                \"sequenceId\":\"e6d677e9-d66a-4c8f-aeb6-73a03f0657e2\"\n        }\n    },\n\"travelRule\": {\n            \"travelRuleTransactionOptions\": {\n                \"comment\": \"Test Comment\",\n                \"outputs\": [\n                    {\n                        \"custodial\": false,\n                        \"vasp\": {\n                            \"id\": \"did:ethr:0x645fa50712c17cbeff5a52f4199b9a5e283cdea6\"\n                        },\n                        \"beneficiary\": {\n                            \"type\": \"natural\",\n                            \"name\": \"Microsoft\",\n                            \"address\": {\n                                \"address1\": \"1st main\",\n                                \"address2\": \"M G road\",\n                                \"city\": \"Bengalure\",\n                                \"country\": \"IN\"\n                            }\n                        },\n                        \"originator\": {\n                            \"type\": \"natural\",\n                            \"referenceNumber\": \"12345\",\n                            \"name\": \"Iron-MAN\",\n                            \"dob\": \"2020-04-02\",\n                            \"pob\": \"London\",\n                            \"address\": {\n                                \"address1\": \"main streat 101\",\n                                \"address2\": \"address line 2\",\n                                \"city\": \"London\",\n                                \"country\": \"GB\"\n                            },\n                            \"identification\": {\n                                \"type\": \"ARNU\",\n                                \"number\": \"12345Number\",\n                                \"country\": \"IN\",\n                                \"authority\": \"Govt of Italy\"\n                            }\n                        }\n                    }\n                ]\n            }\n        }\n}\n\n\n\n\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/travel-rule/create-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"travel-rule",
+												"create-transaction"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Transaction by Token",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true,\n            \"tokenOptions\":{\n                \"tokenName\":\"USDC\",\n                \"tokenAddress\":\"0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C\"\n            }\n    },\n    \"transaction\":{\n        \"recipientsData\":{\n                \"recipients\":[\n                    {\n                        \"address\":\"0xa5946470206572eC729DA064fDe6a044CCfbE537\",\n                        \"amount\":0.008\n                    }\n                ],\n                \"sequenceId\":\"e6d677e9-d66a-4c7f-aeb6-73a02f0657e2\"\n        }\n    },\n    \"travelRule\":{\n        \"travelRuleTransactionOptions\":{\n            \"sequenceId\":\"e6d677e9-d66a-4c7f-aeb6-73a02f0657e2\",\n            \"comment\":\"Test Comment\",\n            \"originator\":{\n                        \"type\":\"natural\",\n                        \"accountNumber\": null,\n                        \"referenceNumber\": \"12345\",\n                        \"name\": \"Bruce\",\n                        \"dob\": \"2020-04-02\",\n                        \"pob\": \"London\",\n                        \"address\": {\n                            \"address1\": \"main streat 101\",\n                            \"address2\": \"address line 2\",\n                            \"city\": \"London\",\n                            \"country\": \"GB\"\n                        },\n                        \"identification\": {\n                            \"type\": \"ARNU\",\n                            \"number\": \"12345Number\",\n                            \"country\": \"IN\",\n                            \"authority\": \"Govt of Italy\"\n                        }\n                    },\n                    \"outputs\":[{\n                        \"custodial\": false,\n                        \"data\":null,\n                        \"vasp\" : {\n                            \"id\": \"did:ethr:0x645fa50712c17cbeff5a52f4199b9a5e283cdea6\"\n                        },\n                        \"beneficiary\": {\n                            \"type\": \"natural\",\n                            \"name\": \"Microsoft\",\n                            \"address\": {\n                                \"address1\": \"1st main\",\n                                \"address2\": \"M G road\",\n                                \"city\": \"Bengalure\",\n                                \"country\": \"IN\"\n                            }\n                        }\n                    }]\n        }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/travel-rule/create-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"travel-rule",
+												"create-transaction"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Update Transaction Status",
+							"item": [
+								{
+									"name": "Update Transaction Status",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"travelRule\":{\n        \"updateTravelRuleTransactionStatusRequest\":{\n             \"action\":\"accept\",\n             \"txnId\":\"5f9f5b3a-0b1a-4b7a-8b0a-0b9a3a0b9a3a\",\n             \"reason\":\"accept the transaction\"\n        }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/travel-rule/update-transaction-status",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"travel-rule",
+												"update-transaction-status"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "External Transactions",
+							"item": [
+								{
+									"name": "Transfer Transaction Using Native Coin.",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true\n    },\n    \"transactions\":{\n        \"recipientsData\":{\n                \"recipients\":[\n                    {\n                        \"address\":\"0xa5946470206572eC729DA064fDe6a044CCfbE537\",\n                        \"amount\":0.008\n                    }\n                ],\n                \"sequenceId\":\"e6d677e9-d66a-4c7f-aeb6-73a02f0657e2\"\n        }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/send-many-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"send-many-transaction"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Transfer Transaction Using Token",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true,\n            \"tokenOptions\":{\n                \"tokenName\":\"USDC\",\n                \"tokenAddress\":\"0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C\"\n            }\n    },\n    \"transactions\":{\n        \"recipientsData\":{\n                \"recipients\":[\n                    {\n                        \"address\":\"0xa5946470206572eC729DA064fDe6a044CCfbE537\",\n                        \"amount\":0.008\n                    }\n                ],\n                \"sequenceId\":\"e6d677e9-d66a-4c7f-aeb6-73a02f0657e2\"\n        }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/send-many-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"send-many-transaction"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Internal Transactions",
+							"item": [
+								{
+									"name": "Transfer Transaction Using Native Coin.",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true\n    },\n    \"transactions\":{\n        \"recipientsData\":{\n                \"recipients\":[\n                    {\n                        \"address\":\"0xa5946470206572eC729DA064fDe6a044CCfbE537\",\n                        \"amount\":0.008\n                    }\n                ],\n                \"sequenceId\":\"e6d677e9-d66a-4c7f-aeb6-73a02f0657e2\",\n                \"isInternal\":true\n        }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/send-many-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"send-many-transaction"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Transfer Transaction Using Token",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true,\n            \"tokenOptions\":{\n                \"tokenName\":\"USDC\",\n                \"tokenAddress\":\"0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C\"\n            }\n    },\n    \"transactions\":{\n        \"recipientsData\":{\n                \"recipients\":[\n                    {\n                        \"address\":\"0xa5946470206572eC729DA064fDe6a044CCfbE537\",\n                        \"amount\":0.008\n                    }\n                ],\n                \"sequenceId\":\"e6d677e9-d66a-4c7f-aeb6-73a02f0657e2\",\n                \"isInternal\":true\n        }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/send-many-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"send-many-transaction"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Deposit Wallets",
+					"item": [
+						{
+							"name": "UTXO",
+							"item": [
+								{
+									"name": "Create Travel Rule Transactions",
+									"item": [
+										{
+											"name": "Create Transaction by Native Coin",
+											"request": {
+												"auth": {
+													"type": "basic",
+													"basic": [
+														{
+															"key": "password",
+															"value": "{{client_secret}}",
+															"type": "string"
+														},
+														{
+															"key": "username",
+															"value": "{{client_id}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"btc\",\n        \"walletId\":2\n    },\n    \"transaction\":{\n        \"consolidateTransactionResult\":[\"BIND GET CONSLODATION TRANSACTION RESPONSE\"]\n    },\n    \"travelRule\":{\n        \"travelRuleTransactionOptions\":{\n            \"sequenceId\":\"07eac7bf-8ca4-48a8-b008-3a4949713dcd\", // For UTXO ONLY\n            \"comment\":\"Test Comment\",\n            \"originator\":{\n                        \"type\":\"natural\",\n                        \"accountNumber\": null,\n                        \"referenceNumber\": \"12345\",\n                        \"name\": \"Bruce\",\n                        \"dob\": \"2020-04-02\",\n                        \"pob\": \"London\",\n                        \"address\": {\n                            \"address1\": \"main streat 101\",\n                            \"address2\": \"address line 2\",\n                            \"city\": \"London\",\n                            \"country\": \"GB\"\n                        },\n                        \"identification\": {\n                            \"type\": \"ARNU\",\n                            \"number\": \"12345Number\",\n                            \"country\": \"IN\",\n                            \"authority\": \"Govt of Italy\"\n                        }\n                    },\n                    \"outputs\":[{\n                        \"custodial\": false,\n                        \"data\":null,\n                        \"vasp\" : {\n                            \"id\": \"did:ethr:0x645fa50712c17cbeff5a52f4199b9a5e283cdea6\"\n                        },\n                        \"beneficiary\": {\n                            \"type\": \"natural\",\n                            \"name\": \"Microsoft\",\n                            \"address\": {\n                                \"address1\": \"1st main\",\n                                \"address2\": \"M G road\",\n                                \"city\": \"Bengalure\",\n                                \"country\": \"IN\"\n                            }\n                        }\n                    }]\n        }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/travel-rule/create-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"travel-rule",
+														"create-transaction"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Update Transaction Status",
+									"item": [
+										{
+											"name": "Update Transaction Status",
+											"request": {
+												"auth": {
+													"type": "basic",
+													"basic": [
+														{
+															"key": "password",
+															"value": "{{client_secret}}",
+															"type": "string"
+														},
+														{
+															"key": "username",
+															"value": "{{client_id}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"travelRule\":{\n        \"updateTravelRuleTransactionStatusRequest\":{\n             \"action\":\"accept\",\n             \"txnId\":\"5f9f5b3a-0b1a-4b7a-8b0a-0b9a3a0b9a3a\",\n             \"reason\":\"accept the transaction\"\n        }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/travel-rule/update-transaction-status",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"travel-rule",
+														"update-transaction-status"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Consolidate UTXO Transaction To Internal Wallet",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"btc\",\n        \"walletId\":2\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"MVXHL4BFiE1BFc98eDoL1wTSXtfcdcSLqj\",\n                \"isInternal\":true\n            },\n        \"sequenceId\":\"07eac7bf-8ca4-48a8-b008-3a4949713dcd\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"consolidate-transaction"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "429 Rate Limit Exceeded",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"btc\",\n        \"walletId\":2\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"MVXHL4BFiE1BFc98eDoL1wTSXtfcdcSLqj\",\n                \"isInternal\":true\n            },\n        \"sequenceId\":\"07eac7bf-8ca4-48a8-b008-3a4949713dcd\"\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"wallet",
+														"consolidate-transaction"
+													]
+												}
+											},
+											"status": "Rate Limit Exceeded",
+											"code": 429,
+											"_postman_previewlanguage": "",
+											"header": [],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
+											"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"Another consolidation session related to this wallet is in progress. Please try again in 15 seconds\",\n  \"code\": \"RATE_LIMIT_EXCEEDED\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Consolidate UTXO Transaction To External Wallet",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"btc\",\n        \"walletId\":2\n    },\n    \"transactions\":{\n        \"consolidateTransactionResults\":[\"BIND GET CONSLODATION TRANSACTION RESPONSE\"],\n       \"consolidateOptions\":{\n                \"targetAddress\":\"MVXHL4BFiE1BFc98eDoL1wTSXtfcdcSLqj\"\n            },\n        \"sequenceId\":\"07eac7bf-8ca4-48a8-b008-3a4949713dcd\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"consolidate-transaction"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "429 Rate Limit Exceeded",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"btc\",\n        \"walletId\":2\n    },\n    \"transactions\":{\n        \"consolidateTransactionResults\":[\"BIND GET CONSLODATION TRANSACTION RESPONSE\"],\n       \"consolidateOptions\":{\n                \"targetAddress\":\"MVXHL4BFiE1BFc98eDoL1wTSXtfcdcSLqj\"\n            },\n        \"sequenceId\":\"07eac7bf-8ca4-48a8-b008-3a4949713dcd\"\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"wallet",
+														"consolidate-transaction"
+													]
+												}
+											},
+											"status": "Rate Limit Exceeded",
+											"code": 429,
+											"_postman_previewlanguage": "",
+											"header": [],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
+											"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"Another consolidation session related to this wallet is in progress. Please try again in 15 seconds\",\n  \"code\": \"RATE_LIMIT_EXCEEDED\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "NON-UTXO",
+							"item": [
+								{
+									"name": "Create Travel Rule Transactions",
+									"item": [
+										{
+											"name": "Create Transaction  by Token",
+											"request": {
+												"auth": {
+													"type": "basic",
+													"basic": [
+														{
+															"key": "password",
+															"value": "{{client_secret}}",
+															"type": "string"
+														},
+														{
+															"key": "username",
+															"value": "{{client_id}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true,\n            \"tokenOptions\":{\n                \"tokenName\":\"USDC\",\n                \"tokenAddress\":\"0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C\"\n            }\n    },\n    \"transaction\":{\n        \"consolidateTransactionResult\":[\"BIND GET CONSLODATION TRANSACTION RESPONSE\"]\n    },\n    \"travelRule\":{\n        \"travelRuleTransactionOptions\":{\n            \"comment\":\"Test Comment\",\n            \"originator\":{\n                        \"type\":\"natural\",\n                        \"accountNumber\": null,\n                        \"referenceNumber\": \"12345\",\n                        \"name\": \"Bruce\",\n                        \"dob\": \"2020-04-02\",\n                        \"pob\": \"London\",\n                        \"address\": {\n                            \"address1\": \"main streat 101\",\n                            \"address2\": \"address line 2\",\n                            \"city\": \"London\",\n                            \"country\": \"GB\"\n                        },\n                        \"identification\": {\n                            \"type\": \"ARNU\",\n                            \"number\": \"12345Number\",\n                            \"country\": \"IN\",\n                            \"authority\": \"Govt of Italy\"\n                        }\n                    },\n                    \"outputs\":[{\n                        \"custodial\": false,\n                        \"data\":null,\n                        \"vasp\" : {\n                            \"id\": \"did:ethr:0x645fa50712c17cbeff5a52f4199b9a5e283cdea6\"\n                        },\n                        \"beneficiary\": {\n                            \"type\": \"natural\",\n                            \"name\": \"Microsoft\",\n                            \"address\": {\n                                \"address1\": \"1st main\",\n                                \"address2\": \"M G road\",\n                                \"city\": \"Bengalure\",\n                                \"country\": \"IN\"\n                            }\n                        }\n                    }]\n        }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/travel-rule/create-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"travel-rule",
+														"create-transaction"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Create Transaction by Native Coin",
+											"request": {
+												"auth": {
+													"type": "basic",
+													"basic": [
+														{
+															"key": "password",
+															"value": "{{client_secret}}",
+															"type": "string"
+														},
+														{
+															"key": "username",
+															"value": "{{client_id}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"transaction\":{\n        \"consolidateTransactionResult\":[\"BIND GET CONSLODATION TRANSACTION RESPONSE\"]\n    },\n    \"travelRule\":{\n        \"travelRuleTransactionOptions\":{\n            \"comment\":\"Test Comment\",\n            \"originator\":{\n                        \"type\":\"natural\",\n                        \"accountNumber\": null,\n                        \"referenceNumber\": \"12345\",\n                        \"name\": \"Bruce\",\n                        \"dob\": \"2020-04-02\",\n                        \"pob\": \"London\",\n                        \"address\": {\n                            \"address1\": \"main streat 101\",\n                            \"address2\": \"address line 2\",\n                            \"city\": \"London\",\n                            \"country\": \"GB\"\n                        },\n                        \"identification\": {\n                            \"type\": \"ARNU\",\n                            \"number\": \"12345Number\",\n                            \"country\": \"IN\",\n                            \"authority\": \"Govt of Italy\"\n                        }\n                    },\n                    \"outputs\":[{\n                        \"custodial\": false,\n                        \"data\":null,\n                        \"vasp\" : {\n                            \"id\": \"did:ethr:0x645fa50712c17cbeff5a52f4199b9a5e283cdea6\"\n                        },\n                        \"beneficiary\": {\n                            \"type\": \"natural\",\n                            \"name\": \"Microsoft\",\n                            \"address\": {\n                                \"address1\": \"1st main\",\n                                \"address2\": \"M G road\",\n                                \"city\": \"Bengalure\",\n                                \"country\": \"IN\"\n                            }\n                        }\n                    }]\n        }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/travel-rule/create-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"travel-rule",
+														"create-transaction"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Get Consolidation Results",
+											"request": {
+												"auth": {
+													"type": "basic",
+													"basic": [
+														{
+															"key": "password",
+															"value": "{{client_secret}}",
+															"type": "string"
+														},
+														{
+															"key": "username",
+															"value": "{{client_id}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0x5dce8dc7ae6eeca7abb378406db5965c1a4684cd\"\n        }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/wallet/get-consolidate-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"wallet",
+														"get-consolidate-transaction"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Update Transaction Status",
+									"item": [
+										{
+											"name": "Update Transaction Status",
+											"request": {
+												"auth": {
+													"type": "basic",
+													"basic": [
+														{
+															"key": "password",
+															"value": "{{client_secret}}",
+															"type": "string"
+														},
+														{
+															"key": "username",
+															"value": "{{client_id}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"travelRule\":{\n        \"updateTravelRuleTransactionStatusRequest\":{\n             \"action\":\"accept\",\n             \"txnId\":\"5f9f5b3a-0b1a-4b7a-8b0a-0b9a3a0b9a3a\",\n             \"reason\":\"accept the transaction\"\n        }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/travel-rule/update-transaction-status",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"travel-rule",
+														"update-transaction-status"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Consolidate Non-UTXO Transaction To External Wallet By Native Coins",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"transactions\":{\n        \"consolidateTransactionResults\":[\"BIND GET CONSLODATION TRANSACTION RESPONSE\"],\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0xb86f1bb681cbb267fa105b38601dc8f67487edd5\"\n            }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"consolidate-transaction"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "429 Rate Limit Exceeded",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"transactions\":{\n        \"consolidateTransactionResults\":[\"BIND GET CONSLODATION TRANSACTION RESPONSE\"],\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0xb86f1bb681cbb267fa105b38601dc8f67487edd5\"\n            }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"wallet",
+														"consolidate-transaction"
+													]
+												}
+											},
+											"status": "Rate Limit Exceeded",
+											"code": 429,
+											"_postman_previewlanguage": "",
+											"header": [],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
+											"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"Another consolidation session related to this wallet is in progress. Please try again in 15 seconds\",\n  \"code\": \"RATE_LIMIT_EXCEEDED\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Consolidate Non-UTXO Transaction to External Wallet By Tokens",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true,\n        \"tokenOptions\":{\n                \"tokenName\":\"USDC\",\n                \"tokenAddress\":\"0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C\"\n            }\n    },\n    \"transactions\":{\n       \"consolidateTransactionResults\":[\"BIND GET CONSLODATION TRANSACTION RESPONSE\"],\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0xb86f1bb681cbb267fa105b38601dc8f67487edd5\"\n            }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"consolidate-transaction"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "429 Rate Limit Exceeded",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true,\n        \"tokenOptions\":{\n                \"tokenName\":\"USDC\",\n                \"tokenAddress\":\"0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C\"\n            }\n    },\n    \"transactions\":{\n       \"consolidateTransactionResults\":[\"BIND GET CONSLODATION TRANSACTION RESPONSE\"],\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0xb86f1bb681cbb267fa105b38601dc8f67487edd5\"\n            }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"wallet",
+														"consolidate-transaction"
+													]
+												}
+											},
+											"status": "Rate Limit Exceeded",
+											"code": 429,
+											"_postman_previewlanguage": "",
+											"header": [],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
+											"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"Another consolidation session related to this wallet is in progress. Please try again in 15 seconds\",\n  \"code\": \"RATE_LIMIT_EXCEEDED\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Consolidate Non-UTXO Transaction To Internal Wallet By Native Coins",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0xb86f1bb681cbb267fa105b38601dc8f67487edd5\",\n                \"isInternal\":true\n            }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"consolidate-transaction"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "429 Rate Limit Exceeded",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0xb86f1bb681cbb267fa105b38601dc8f67487edd5\",\n                \"isInternal\":true\n            }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"wallet",
+														"consolidate-transaction"
+													]
+												}
+											},
+											"status": "Rate Limit Exceeded",
+											"code": 429,
+											"_postman_previewlanguage": "",
+											"header": [],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
+											"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"Another consolidation session related to this wallet is in progress. Please try again in 15 seconds\",\n  \"code\": \"RATE_LIMIT_EXCEEDED\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Consolidate Non-UTXO Transaction To Internal Wallet By Tokens",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{client_id}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true,\n        \"tokenOptions\":{\n                \"tokenName\":\"USDC\",\n                \"tokenAddress\":\"0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C\"\n            }\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0xb86f1bb681cbb267fa105b38601dc8f67487edd5\",\n                \"isInternal\":true\n            }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wallet",
+												"consolidate-transaction"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "429 Rate Limit Exceeded",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1,\n        \"allToken\":true,\n        \"tokenOptions\":{\n                \"tokenName\":\"USDC\",\n                \"tokenAddress\":\"0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C\"\n            }\n    },\n    \"transactions\":{\n       \"consolidateOptions\":{\n                \"targetAddress\":\"0xb86f1bb681cbb267fa105b38601dc8f67487edd5\",\n                \"isInternal\":true\n            }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/api/wallet/consolidate-transaction",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"wallet",
+														"consolidate-transaction"
+													]
+												}
+											},
+											"status": "Rate Limit Exceeded",
+											"code": 429,
+											"_postman_previewlanguage": "",
+											"header": [],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
+											"body": "{\n  \"success\": false,\n  \"data\": {},\n  \"message\": \"Another consolidation session related to this wallet is in progress. Please try again in 15 seconds\",\n  \"code\": \"RATE_LIMIT_EXCEEDED\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Pending Travel Rule Transactions",
+					"item": [
+						{
+							"name": "Get Pending request By Sequence ID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"wallet\": {\n    \"coin\": \"eth\",\n    \"walletId\": 6361\n  },\n  \"transaction\": {\n    \"sequenceId\": \"73d4bc23-1283-ef19-fbc3-7f45c7590744\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/travel-rule/pending-transaction",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"travel-rule",
+										"pending-transaction"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Pending Requests",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n      \"wallet\":{\n        \"coin\": \"eth\",\n        \"walletId\":1\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/travel-rule/pending-transaction",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"travel-rule",
+										"pending-transaction"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Is Travel Rule Enabled",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/travel-rule/is-enabled",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"travel-rule",
+								"is-enabled"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-Vasps-Info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"travelRule\": {\n    \"vaspsRequest\": {\n      \"name\": \"lmnl\"\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-sdk.lmnl.dev/api/travel-rule/get-vasps-info",
+							"protocol": "https",
+							"host": [
+								"api-sdk",
+								"lmnl",
+								"dev"
+							],
+							"path": [
+								"api",
+								"travel-rule",
+								"get-vasps-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Travel Rule Transaction Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"travelRule\": {\n    \"getTravelRuleTransactionRequest\": {\n      \"group\": \"inbox\",\n      \"direction\": \"outgoing\"\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/travel-rule/get-transaction",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"travel-rule",
+								"get-transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Travel Rule Transaction by TxId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/travel-rule/get-transaction/:txnId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"travel-rule",
+								"get-transaction",
+								":txnId"
+							],
+							"variable": [
+								{
+									"key": "txnId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "In blockchain, Travel Rule is a regulatory compliance to enhance transparency, prevent frauds, money laundering, and terrorist funding in transactions. It mandates that based on the jurisdiction regulations, a Virtual Asset Service Provider (VASP), such as a cryptocurrency exchange, needs to collect and share certain information of the transaction sender and receiver above a certain threshold. This information typically includes details like the sender's and receiver's names, addresses, and account numbers. You can use the following APIs to create and manage your Travel Rule transactions in hot wallets:\n\n- [Create Travel Rule Transaction](https://docs.lmnl.app/reference/createtransaction)\n    \n- [Update Transaction Status](https://docs.lmnl.app/reference/updatetransactionstatus)\n    \n- [Retrieve List of Travel Rule Transactions](https://docs.lmnl.app/reference/gettravelruletransactiondata)\n    \n- [Retrieve Travel Rule Transaction By Transaction ID](https://docs.lmnl.app/reference/gettravelruletransactionbytxid)\n    \n- [Retrieve List All VASPs With Details](https://docs.lmnl.app/reference/get-vasps-info-1)\n    \n- [Retrieve List Of Consolidated Transactions](https://docs.lmnl.app/reference/getunconsolidationtransaction)\n    \n- [Check Travel Rule Status](https://docs.lmnl.app/reference/istravelruleenabled)\n    \n- [Retrieve Pending Travel Rule Transaction](https://docs.lmnl.app/reference/getpendingtravelrulerequest)"
+		},
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "Ping Liminal Express Server",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/ping",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/info",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/health",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Metrics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/metrics",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"metrics"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "These APIs are designed to support system monitoring and maintenance by providing tools to check operational status, verify connectivity, track performance metrics, and access detailed system information. You can use the following APIs to effectively manage system health and ensure reliable performance:\n\n1. [Ping Liminal Express Server](https://docs.lmnl.app/reference/ping-pong)\n    \n2. [Info](https://docs.lmnl.app/reference/info)\n    \n3. [Health](https://docs.lmnl.app/reference/health-2)\n    \n4. [Metrics](https://docs.lmnl.app/reference/metrics)"
+		},
+		{
+			"name": "Setup API Signer",
+			"item": [
+				{
+					"name": "MPC Shards",
+					"item": [
+						{
+							"name": "Create RSA Key",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{mgmt_client_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{mgmt_client_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/mpc-shard/create-rsakey",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"mpc-shard",
+										"create-rsakey"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Import MPC Shard",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{client_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{client_id}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/mpc-shard/import",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"mpc-shard",
+										"import"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "In blockchain, cryptographic keys are used to secure transactions and control access to digital assets. These keys are essential for securing data through encryption, decryption, and digital signatures. Liminal offers APIs to help your organisation maintain control over key distribution and access. You can use the following APIs to create and manage your keys:\n\n- [Create an RSA key](https://docs.lmnl.app/reference/creatersakey)\n    \n- [Import MPC shard](https://docs.lmnl.app/reference/import)"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "client_id",
+			"value": "",
+			"disabled": true
+		},
+		{
+			"key": "client_secret",
+			"value": "",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "https://api-sdk.lmnl.dev",
+			"type": "string"
+		}
+	]
+}
